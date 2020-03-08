@@ -14,13 +14,26 @@ export class AppComponent {
   title = 'James Bond is delyaed';
   message: string;
   name: string;
+  names: Array<string>;
+  seleName: string;
   constructor(){
     this.message = 'The Message';
-
     this.name = '';
+    this.names  =new Array<string>();
+    this.names.push('James Bond');
+    this.names.push('Ethan Hunt');
+    this.names.push('Indiana Jones');
+    this.names.push('Jason Bourn');
+    this.names.push('R.N. Kao');
+    this.seleName = '';
   }
 
   display(event): void {
       this.message = `The New Message ${event.target.value}`;
+  }
+
+  selectedName(evt): void {
+      this.seleName = evt.target.value;
+      console.log(`Selected name ${this.seleName}`);
   }
 }

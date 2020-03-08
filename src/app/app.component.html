@@ -14,3 +14,8 @@
 <input type="text" class="form-control" [(ngModel)]="name">
 <br>
 <input type="text" class="form-control" [(ngModel)]="name">
+<hr>
+<div class="container"> Seelcted Character {{seleName}}</div>
+<select class="form-control" [(ngModel)]="seleName" (change)="selectedName($event)">
+  <option *ngFor="let n of names" value="{{n}}">{{n}}</option>
+</select>
