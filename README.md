@@ -1,27 +1,70 @@
-# MyNgApp
+rxjs --> Reactive JavaScript Extenions --> provides 'observable' operators for workign with collection
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.5.
+zone.js --> Post Render Statck Trace for Angular Objects in Browser
 
-## Development server
+tslib.js --> Bridge between ES 6 and Browser's JavaScript
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+polyfills.js
+---------------------------------------------------------------------
+Angular 9
 
-## Code scaffolding
+Angular 2 to Angular 7 --> angular-html-template compiler
+Angular 8 --> View Engine --> Compiled HTML as integrated Code
+Angular 9 --> Ivy compilation
+	--> Optimized Comilation for Compressing the Angular Build using  Ahead-of-Time (AOT) Compilation 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+angular.json file
+-- Project Configuration for Build/Test/Execution
+-- AOT now default to true in Angular 9 to support Ivy
+-- styles references, to load external and internal styles in Build
+-- scripts references, to load external scripts in angular app
+-- configure angular custom libs in current project e.g. like dll
+package.json
+-- standard Angular references and dependency references e.g. rxjs, tslib and zone.js
+-- angular/cli, angular-devkit, jasmine, protractor, karma
+--scripts, to run/build/test the app.
+main.ts 	
+-- Entry point to angular app
+	-- bootstrap the Angular Application by loading the Entry-Module 
+-- index.html
+	-- contains selector aka custom HTML tag to bootstrap / load the first component (means render it) in browser
 
-## Build
+-- app.module.ts
+	-- The File that defines AppModule, this is a bootstrap module and this module loads standard Angular Module, declare components, register services in DI and Boottsrap the one or more components from declarations
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+========================================================================
 
-## Running unit tests
+Angular Decorators
+1. @NgModule --> Apply on class to make it as Angular Module
+2. @Component --> Apply on class to make it as Angular Component
+3. @Injectable --> Apply on class to make it as Angular Service
+4. @Directive --> Apply on class to make it as Angular Directive
+5. @Pipe --> Apply on class to make it as Angular Pipe
+6. @Input --> Apply on public property of Component to Accept Input data
+7. @Output --> Applied on EventEmitter object to emit an event from child component to parent component
+8. @ViewChild --> Applied on the Component's instance in its parent component to define it as child component
+9. @HostListener --> Applied on Method to specify for which event the method will be called
+   
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+Angular Two Way Binding
+Combination of Property Binding and Event Binding
+Two-Way Binding = Property Binding [] + Event Binding()
+
+[(ngModel)]="<PUBLIC-PROPERTY-FROM-COMPONENT-CLASS>"
+
+ngModel --> The angular's standard Directive (custom HTML Attribute) for Two-Way binding
+
+We need to import FormsModule from @angular/forms in @NgModule's import array for AppMpdule
+
+1. ngModel will listen the default event of HTML element (e.g. KeyUp in input text) 
+2. It will read the current value of element and raise 'ngModelChanged' event on element
+3. It will send the updated value of the property to Component
+4. Component will receive update can call its ngOnChange event
+5. Component will update the property and all other properties depending on this propery
+6. Component will send updated values of properties to UI and update the UI
