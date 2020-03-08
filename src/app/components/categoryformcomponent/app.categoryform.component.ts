@@ -36,4 +36,10 @@ export class CategoryFormComponent implements OnInit {
     this.categories = this.logic.addCategory(this.category);
     console.log(JSON.stringify(this.categories));
   }
+  getSelectedCategory(cat: CategoryModel): void {
+    // create a blank target object {}
+    // store data from cat in the blank object
+    // point the category to blank object
+    this.category = Object.assign({},cat);
+  }
 }
