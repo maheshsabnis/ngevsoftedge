@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {CategoryFormComponent} from './components/categoryformcomponent/app.categoryform.component';
+import { CategoryReactiveFormComponent } from './components/categoryreactiveformcomponent/app.categoryreactiveform.component';
 
 // imports: Import all standared and external Angular modules in current
 // application
@@ -13,13 +14,14 @@ import {CategoryFormComponent} from './components/categoryformcomponent/app.cate
 // boostrap: Bootstrap one or more components from Declaration
 @NgModule({
   declarations: [
-    AppComponent, CategoryFormComponent
+    AppComponent, CategoryFormComponent,
+  CategoryReactiveFormComponent
   ],
   imports: [
     BrowserModule,FormsModule,
-    AppRoutingModule
+    AppRoutingModule, ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [CategoryFormComponent]
+  bootstrap: [CategoryReactiveFormComponent]
 })
 export class AppModule { }

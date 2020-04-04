@@ -74,6 +74,40 @@ Programming With Angular
       2. Apply Directives(?)
    3. Express, Property Binding, Event Binding and TwoWay Binding
 2. Working with Forms
+   1. Template Form
+      1. the # base identity for each element
+   2. Reactive Form
+      1. A FormGroup that create a FormModel for all Editable HTML Elementts in it 
+         1. FormModel --> Collection of name/value pair of each editable element
+      2. ReactiveFormsModule from @angular/forms
+         1. FormGroup --> Has the 'value' property to read the FormModel, and setValue() method to write bthe FormModel
+            1. The class that is used to define a collection of FormControl (?) that is mapped with Model class(?)
+               1. Model Class --> Class of which property values are set based on data entered in HTML elements in the form
+                  1. Establish Tight-Coupling between Form and Model class
+               2. FormControl --> Class that is used to link Editable HTML element with the Public proeprty from the Model class 
+                  1. The 'formControlName' attribute is used by HTML Editable element to map/bind with the public property of the form class. 
+                  2. FormControl--> Has 'value' property to read value of each editable element and 'setValue()' method to write value
+         2. Validators
+            1. Defining the validation rules for The Mdoel class properties
+               1. Static Method for valilidations
+                  1. required(AbstractControl) and requiredTrue(AbstractControl)
+                     1. AbstractControl: The class that represent HTML element on whihc the validations are applied
+                  2. minLength(int) --> The minimum length
+                  3. maxLength(int) --> The max length 
+                  4. min(int) / max(int)
+                  5. pattern(string/RegEx)
+                  6. email(RegEx/string) 
+                  7. compose([]) / composeAsync([])
+                     1. Accepts array of vaidators methods
+            2. Validations are applied on HTML editable elements using fromControlName
+               1. The validation message must be evaluated using following
+                  1. <FormGroup>.controls.<formControlName>.dirty
+                     1. The Element is changed
+                  2. <FormGroup>.controls.<formControlName>.invalid /!<FormGroup>.controls.<formControlName>.valid
+                     1. The value in element is invalid
+                  3. Decide which error message is to be shown
+                     1. <FormGroup>.controls.<formControlName>.errors.<rule>
+                        1. rule --> required/requredTrue/minlength/maxlength/min/max.pattern/email
 3. Working With Services
 4. Communication Across Components
 5. Creating Directives

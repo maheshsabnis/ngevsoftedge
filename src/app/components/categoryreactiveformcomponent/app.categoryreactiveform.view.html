@@ -1,0 +1,52 @@
+<h1>The Reactive Forms in Angular</h1>
+<div class="container">
+    <!--Bind the form to frmCategory the FormGroup-->
+    <!--ngSubmit will read Key/Value pairs of FormControlName-->
+    <form name="frmCategory" [formGroup]="frmCategory" (ngSubmit)="save()">
+        <div class="form-group">
+            <label>Category Row Id</label>
+            <!--Bind the Key from the FormGroup to formControName of
+              Editable element-->
+            <input type="text" name="CategoryRowId" class="form-control" formControlName="CategoryRowId">
+            <div class="alert alert-danger" *ngIf="frmCategory.controls.CategoryRowId.dirty && !frmCategory.controls.CategoryRowId.valid">
+                <p *ngIf="frmCategory.controls.CategoryRowId.errors.required"> Value is must</p>
+                <p *ngIf="frmCategory.controls.CategoryRowId.errors.minlength">Value must be 2 digits minimum</p>
+                <p *ngIf="frmCategory.controls.CategoryRowId.errors.maxlength">Value cab be 6 digits maximum</p>
+                <p *ngIf="frmCategory.controls.CategoryRowId.errors.pattern">Value must be numeric</p>
+                <p *ngIf="frmCategory.controls.CategoryRowId.errors.notEven">Value must be Even</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Category Id</label>
+            <input type="text" name="CategoryId" formControlName="CategoryId" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Category Name</label>
+            <input type="text" name="CategoryName" formControlName="CategoryName" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Base Price</label>
+            <input type="text" name="BasePrice" formControlName="BasePrice" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="button" class="btn btn-warning" value="New" (click)="clear()">
+            <input type="submit" class="btn btn-success" value="Save">
+        </div>
+    </form>
+</div>
+<div class="container">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <!--Generating Table Column Headers from Properties of Category Class-->
+                <th *ngFor="let c of tableColumns">{{c}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cat of categories" (click)="getSelectedCategory(cat)">
+                <!--Generating Table rows from Properties of Category Class-->
+                <td *ngFor="let c of tableColumns">{{cat[c]}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
