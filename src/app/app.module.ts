@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {CategoryFormComponent} from './components/categoryformcomponent/app.categoryform.component';
 import { CategoryReactiveFormComponent } from './components/categoryreactiveformcomponent/app.categoryreactiveform.component';
+import { CategoryServiceComponent } from './components/servicecomponent/app.categoryservice.component';
 
 // imports: Import all standared and external Angular modules in current
 // application
@@ -15,13 +17,13 @@ import { CategoryReactiveFormComponent } from './components/categoryreactiveform
 @NgModule({
   declarations: [
     AppComponent, CategoryFormComponent,
-  CategoryReactiveFormComponent
+  CategoryReactiveFormComponent, CategoryServiceComponent
   ],
   imports: [
-    BrowserModule,FormsModule,
+    BrowserModule,FormsModule, HttpClientModule,
     AppRoutingModule, ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [CategoryReactiveFormComponent]
+  bootstrap: [CategoryServiceComponent]
 })
 export class AppModule { }
