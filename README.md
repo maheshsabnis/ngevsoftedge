@@ -110,7 +110,8 @@ Programming With Angular
                         1. rule --> required/requredTrue/minlength/maxlength/min/max.pattern/email
 3. Working With Services
 4. Communication Across Components
-5. Creating Directives
+5. 
+6. Creating Directives
    1. They are Custom Reusable UI Elements like User/Custom Controles
    2. 3 Types
       1. Component Directive
@@ -122,4 +123,4 @@ Programming With Angular
       3. Attribute Directives
          1. Add a custom behavior to HTML elements
             1. ngModel
-6. Routing
+7. Routing

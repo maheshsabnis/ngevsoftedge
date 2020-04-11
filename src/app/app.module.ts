@@ -7,6 +7,10 @@ import { AppComponent } from './app.component';
 import {CategoryFormComponent} from './components/categoryformcomponent/app.categoryform.component';
 import { CategoryReactiveFormComponent } from './components/categoryreactiveformcomponent/app.categoryreactiveform.component';
 import { CategoryServiceComponent } from './components/servicecomponent/app.categoryservice.component';
+import { DeptMasterComponent } from './components/masterdetails/app.deptmaster.component';
+import { EmpChildComponent } from './components/masterdetails/app.empchild.component';
+import { DeptSenderComponent } from './components/masterdetailscommunication/app.deptsender.component';
+import { EmpReceiverComponent } from './components/masterdetailscommunication/app.empreceiver.component';
 
 // imports: Import all standared and external Angular modules in current
 // application
@@ -17,13 +21,15 @@ import { CategoryServiceComponent } from './components/servicecomponent/app.cate
 @NgModule({
   declarations: [
     AppComponent, CategoryFormComponent,
-  CategoryReactiveFormComponent, CategoryServiceComponent
+  CategoryReactiveFormComponent, CategoryServiceComponent,
+  DeptMasterComponent, EmpChildComponent,
+  DeptSenderComponent, EmpReceiverComponent
   ],
   imports: [
     BrowserModule,FormsModule, HttpClientModule,
     AppRoutingModule, ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [CategoryServiceComponent]
+  bootstrap: [DeptSenderComponent, EmpReceiverComponent]
 })
 export class AppModule { }
