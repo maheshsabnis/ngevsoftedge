@@ -14,6 +14,10 @@ import { EmpReceiverComponent } from './components/masterdetailscommunication/ap
 import { GridDirectiveComponent } from './directives/app.grid.directive';
 import { GridComponent } from './components/directivecomponents/app.grid.component';
 import { ColorDirective } from './directives/app.color.directive';
+import { CategoryListComponent } from './components/routingapp/catlistcomponent/app.categorylist.component';
+import { CatAddComponent } from './components/routingapp/addcatcomponent/app.catadd.component';
+import { CatEditComponent } from './components/routingapp/editcatcomponent/app.catedit.component';
+import { MainRouteComponent } from './components/routingapp/app.mainroute.component';
 
 // imports: Import all standared and external Angular modules in current
 // application
@@ -27,13 +31,15 @@ import { ColorDirective } from './directives/app.color.directive';
   CategoryReactiveFormComponent, CategoryServiceComponent,
   DeptMasterComponent, EmpChildComponent,
   DeptSenderComponent, EmpReceiverComponent,
-  GridDirectiveComponent, GridComponent, ColorDirective
+  GridDirectiveComponent, GridComponent, ColorDirective,
+  CategoryListComponent, CatAddComponent, CatEditComponent,
+  MainRouteComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,
     AppRoutingModule, ReactiveFormsModule
-  ],
+  ], // AppRoutingModule will load the route Table on root
   providers: [],
-  bootstrap: [GridComponent]
+  bootstrap: [MainRouteComponent]
 })
 export class AppModule { }

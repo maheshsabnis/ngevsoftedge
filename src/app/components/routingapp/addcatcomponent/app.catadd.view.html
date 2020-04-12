@@ -1,0 +1,27 @@
+<div class="container">
+    <form name="frmCategory">
+        <div class="form-group">
+            <label>Category Row Id</label>
+            <input type="text" name="CategoryRowId" class="form-control" [(ngModel)]="category.CategoryRowId">
+        </div>
+        <div class="form-group">
+            <label>Category Id</label>
+            <input type="text" name="CategoryId" class="form-control" [(ngModel)]="category.CategoryId">
+        </div>
+        <div class="form-group">
+            <label>Category Name</label>
+            <input type="text" name="CategoryName" class="form-control" [(ngModel)]="category.CategoryName">
+        </div>
+        <div class="form-group">
+            <label>Base Price</label>
+            <input type="text" name="BasePrice" class="form-control" [(ngModel)]="category.BasePrice">
+        </div>
+        <div class="form-group">
+            <input type="button" class="btn btn-warning" value="New" (click)="clear()">
+            <input type="submit" class="btn btn-success" value="Save" (click)="save()">
+        </div>
+    </form>
+</div>
+<a [routerLink]="['app']">Load App Component</a>
+<router-outlet></router-outlet>
+<a [routerLink]="['']">Back to List</a>

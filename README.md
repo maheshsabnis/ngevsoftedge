@@ -138,3 +138,20 @@ Programming With Angular
          4. Write method for business logic for the directive
          5. Write methods for registering events to activate the custom directive based on events. These methods will be decorated with @HostListener('<NAME- OF-THE-EVENT>')  
 6. Routing
+   1. @angular/router
+      1. RouterModule
+         1. Routes --> Class used to define Route Table using 'Route' class
+            1. Routes is acollection of Route
+            2. Route class with Route Expression Properties
+               1. path: uri
+               2. component: name of the component to be loaded based on route uri
+               3. redirectTo: the default route
+               4. children: the child route / sub route., the collection of 'Route' class
+               5. loadChildren: used for lazy loading in complex/multi-module angular apps
+               6. canActivate: Role based routing
+            3. ActivatedRoute: used for parameterized routing
+            4. Router: Class used for explicit routing
+               1. The 'navigate(['<ROUTE-TRI>'])'
+         2. Route Attibute directives for <a> tag
+            1. [router-link]: assigned to the 'path' value of the Route class
+         3. The <router-outlet> the component that will show the components to be routed

@@ -1,0 +1,19 @@
+<h1>List of Categories</h1>
+<a [routerLink]="['add']">Add Component</a>
+<div class="container">
+    <table class="table table-bordered table-striped table-light">
+        <thead>
+            <tr>
+                <th *ngFor="let c of tableColumns">{{c}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cat of categories">
+                <td *ngFor="let c of tableColumns">{{cat[c]}}</td>
+                <td>
+                    <input type="button" value="edit" (click)="edit(cat.CategoryRowId)" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
