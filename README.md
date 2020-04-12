@@ -110,8 +110,8 @@ Programming With Angular
                         1. rule --> required/requredTrue/minlength/maxlength/min/max.pattern/email
 3. Working With Services
 4. Communication Across Components
-5. 
-6. Creating Directives
+  
+5. Creating Directives
    1. They are Custom Reusable UI Elements like User/Custom Controles
    2. 3 Types
       1. Component Directive
@@ -123,4 +123,18 @@ Programming With Angular
       3. Attribute Directives
          1. Add a custom behavior to HTML elements
             1. ngModel
-7. Routing
+   3. Custom Directive is a class that bis decorated with @Directive decorator 
+      1. Custom Directives must have @Input() properties to accept data from its parent
+      2. @Output() decorated events to emit data to its parent
+   4. Custom Attibute Directive
+      1. This is applied as an 'attribute' of HTML element in template and it is used to change propeties of the HTML element
+         1. Use following classes for creation of Custom Attribute Directive 
+            1. Renderer2 --> Manage the HTML rendering when the directive is activated
+            2. ElementRef --> The HTML Element that will be updated based in directive
+            3. @Input() --> applied on aproperties that will accept values to update the directive and hence will update the HTML element
+            4. @HostListener --> The class that will be used to register events for directive to acticvate
+         2. Inject Renderer2 and ElementRef in Ctor of Directive, these references will be resolved by BrowserModules
+         3. Write public data members for accepting data to manipulate in the directive. These public data membres will be decorated witn @Input()
+         4. Write method for business logic for the directive
+         5. Write methods for registering events to activate the custom directive based on events. These methods will be decorated with @HostListener('<NAME- OF-THE-EVENT>')  
+6. Routing

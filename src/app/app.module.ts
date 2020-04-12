@@ -11,6 +11,9 @@ import { DeptMasterComponent } from './components/masterdetails/app.deptmaster.c
 import { EmpChildComponent } from './components/masterdetails/app.empchild.component';
 import { DeptSenderComponent } from './components/masterdetailscommunication/app.deptsender.component';
 import { EmpReceiverComponent } from './components/masterdetailscommunication/app.empreceiver.component';
+import { GridDirectiveComponent } from './directives/app.grid.directive';
+import { GridComponent } from './components/directivecomponents/app.grid.component';
+import { ColorDirective } from './directives/app.color.directive';
 
 // imports: Import all standared and external Angular modules in current
 // application
@@ -23,13 +26,14 @@ import { EmpReceiverComponent } from './components/masterdetailscommunication/ap
     AppComponent, CategoryFormComponent,
   CategoryReactiveFormComponent, CategoryServiceComponent,
   DeptMasterComponent, EmpChildComponent,
-  DeptSenderComponent, EmpReceiverComponent
+  DeptSenderComponent, EmpReceiverComponent,
+  GridDirectiveComponent, GridComponent, ColorDirective
   ],
   imports: [
-    BrowserModule,FormsModule, HttpClientModule,
+    BrowserModule, FormsModule, HttpClientModule,
     AppRoutingModule, ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [DeptSenderComponent, EmpReceiverComponent]
+  bootstrap: [GridComponent]
 })
 export class AppModule { }
